@@ -11,6 +11,7 @@ class Todo extends Eloquent
     protected $fillable = [
         'title',
         'description',
-        'deadline'
+        'deadline',
+        'state'
     ];
 }
