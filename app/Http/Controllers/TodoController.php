@@ -9,19 +9,20 @@ class TodoController extends Controller
 {
     public function index()
     {
-        return Todo::all();
+        $todos = Todo::all()->toArray();
+        return response()->json(["data" => $todos], 200);
     }
 
     public function show(Todo $todo)
     {
-        return $todo;
+        return response()->json(["data" => $todo], 201);
     }
 
     public function store(Request $request)
     {
         $todo = Todo::create($request->all());
 
-        return response()->json($todo, 201);
+        return response()->json(["data" => $todo], 201);
     }
 
     public function update(Request $request, Todo $todo)
