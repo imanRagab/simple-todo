@@ -29,7 +29,7 @@ class TodoController extends Controller
     {
         $todo->update($request->all());
 
-        return response()->json($todo, 200);
+        return response()->json(["data" => $todo], 200);
     }
 
     public function delete(Todo $todo)
