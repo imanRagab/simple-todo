@@ -14,7 +14,7 @@ class AddStateColumnToTodosTable extends Migration
     public function up()
     {
         Schema::table('todos', function (Blueprint $table) {
-            $table->integer('state')->default(0);
+            $table->boolean('state');
         });
     }
 
