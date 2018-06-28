@@ -1,0 +1,10 @@
+web:
+    image: hitalos/laravel:latest
+    ports:
+        - 80:80
+    volumes:
+        - ./:/var/www
+    links:
+        - db
+db:
+    image: mongo
